@@ -1,0 +1,450 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhvqbsx0taupc"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_depwf"]
+[ext_resource type="Texture2D" uid="uid://6hkcuglpnyke" path="res://images/Tecnologia-scaled.jpg" id="2_cpix6"]
+[ext_resource type="Texture2D" uid="uid://dvap2mao84ox4" path="res://images/A.png" id="3_3mwmg"]
+[ext_resource type="LabelSettings" uid="uid://cno5duv54ojy6" path="res://fonts/title_label_settings.tres" id="5_6wnfa"]
+[ext_resource type="Texture2D" uid="uid://cy4wp6c25mrfh" path="res://images/Back Button.png" id="7_micrw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8bab"]
+font_size = 30
+
+[node name="vista isométrica" type="Node2D"]
+position = Vector2(264, 527)
+script = ExtResource("1_depwf")
+
+[node name="Tecnologia-scaled" type="Sprite2D" parent="."]
+position = Vector2(55.5, 24)
+scale = Vector2(0.248047, 0.644405)
+texture = ExtResource("2_cpix6")
+
+[node name="DesignSemNome(22)" type="Sprite2D" parent="."]
+position = Vector2(58, 30)
+scale = Vector2(0.385, 0.385)
+texture = ExtResource("3_3mwmg")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -85.0
+offset_top = 31.0
+offset_right = -45.0
+offset_bottom = 71.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(0.156863, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.975
+anchor_top = 3.75
+anchor_right = 3.75
+anchor_bottom = 3.75
+offset_left = -89.0
+offset_top = 17.0
+offset_right = -24.0
+offset_bottom = 48.0
+text = "Calcular"
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonLimpar" type="Button" parent="Control"]
+modulate = Color(1, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.925
+anchor_top = 3.75
+anchor_right = 7.7
+anchor_bottom = 3.75
+offset_left = -89.0
+offset_top = 17.0
+offset_right = -24.0
+offset_bottom = 48.0
+text = "Limpar"
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditLarg" type="LineEdit" parent="Control"]
+modulate = Color(0.537255, 1, 0.627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.025
+anchor_bottom = 0.025
+offset_left = -69.0
+offset_top = 218.0
+offset_right = -1.9375
+offset_bottom = 249.0
+alignment = 1
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Control/LineEditLarg"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.05022
+anchor_top = 0.0322581
+anchor_right = -1.05022
+anchor_bottom = 1.0
+offset_left = 184.0
+offset_top = 4.0
+offset_right = 303.0
+offset_bottom = -8.0
+text = "Largura da peça"
+label_settings = ExtResource("5_6wnfa")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditProfund" type="LineEdit" parent="Control"]
+modulate = Color(0.537255, 1, 0.627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.575
+anchor_top = 7.225
+anchor_right = 0.575
+anchor_bottom = 7.225
+offset_left = -91.0
+offset_top = -25.0
+offset_right = -23.9375
+offset_bottom = 6.0
+alignment = 1
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Control/LineEditProfund"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.967047
+anchor_top = -0.097
+anchor_right = -0.967047
+anchor_bottom = 1.16132
+offset_left = 175.0
+offset_top = 0.00699997
+offset_right = 303.0
+offset_bottom = -0.00100136
+text = "Profundidade da 
+peça"
+label_settings = ExtResource("5_6wnfa")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditAlturaPeça" type="LineEdit" parent="Control"]
+modulate = Color(0.537255, 1, 0.627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.575
+anchor_top = 8.475
+anchor_right = 0.975
+anchor_bottom = 8.475
+offset_left = -91.0
+offset_top = -25.0
+offset_right = -23.9375
+offset_bottom = 6.0
+alignment = 1
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Control/LineEditAlturaPeça"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.34838
+anchor_right = -1.34838
+anchor_bottom = 0.774226
+offset_left = 208.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = -0.00100136
+text = "Altura da peça"
+label_settings = ExtResource("5_6wnfa")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditVertical" type="LineEdit" parent="Control"]
+modulate = Color(0.537255, 1, 0.627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.425
+anchor_top = 9.25
+anchor_right = 6.425
+anchor_bottom = 9.25
+offset_left = -91.0
+offset_top = -151.0
+offset_right = -23.9375
+offset_bottom = -120.0
+alignment = 1
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/LineEditVertical"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.537486
+anchor_top = -0.290323
+anchor_right = -0.187178
+anchor_bottom = 1.161
+offset_left = 133.0
+offset_top = 2.0
+offset_right = 249.508
+offset_bottom = 0.00899887
+text = "Comprim. vertical da
+folha"
+label_settings = ExtResource("5_6wnfa")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditHorizontal" type="LineEdit" parent="Control"]
+modulate = Color(0.537255, 1, 0.627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.45
+anchor_top = 9.375
+anchor_right = 6.45
+anchor_bottom = 9.375
+offset_left = -91.0
+offset_top = -109.0
+offset_right = -23.9375
+offset_bottom = -78.0
+alignment = 1
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Control/LineEditHorizontal"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.843273
+anchor_top = -0.387097
+anchor_right = -0.809983
+anchor_bottom = 1.194
+offset_left = 158.544
+offset_top = 3.0
+offset_right = 291.311
+offset_bottom = -0.0139999
+text = "Comprim. horizontal
+da folha"
+label_settings = ExtResource("5_6wnfa")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditEscala" type="LineEdit" parent="Control"]
+modulate = Color(0.537255, 1, 0.627451, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.475
+anchor_top = 10.55
+anchor_right = 6.875
+anchor_bottom = 10.55
+offset_left = -91.0
+offset_top = -109.0
+offset_right = -23.9375
+offset_bottom = -78.0
+alignment = 1
+clear_button_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Control/LineEditEscala"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.671733
+anchor_top = -0.032
+anchor_right = -0.671733
+anchor_bottom = 1.06465
+offset_left = 148.544
+offset_top = -0.00799996
+offset_right = 293.544
+offset_bottom = -0.00400162
+text = "Escala (x : 1)"
+label_settings = ExtResource("5_6wnfa")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditresulVertical" type="LineEdit" parent="Control"]
+modulate = Color(0, 0, 0.168627, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.325
+anchor_right = 6.002
+anchor_bottom = 0.5
+offset_left = -5.00002
+offset_top = -291.0
+offset_right = -5.01703
+offset_bottom = -280.0
+alignment = 1
+editable = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="resultadoMargemVertical" type="Label" parent="Control/LineEditresulVertical"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -31.0
+offset_right = 108.0
+offset_bottom = -8.0
+text = "Margem vertical"
+label_settings = ExtResource("5_6wnfa")
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditresulHorizont" type="LineEdit" parent="Control"]
+modulate = Color(0, 0, 0.168627, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.525
+anchor_right = 0.152
+offset_left = 365.0
+offset_top = -74.0
+offset_right = 364.983
+offset_bottom = -43.0
+alignment = 1
+editable = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="resultadoMargemHorizontal" type="Label" parent="Control/LineEditresulHorizont"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.059
+anchor_bottom = 0.133
+offset_top = -54.0
+offset_right = -0.019722
+offset_bottom = -15.123
+text = "Margem
+Horizontal"
+label_settings = ExtResource("5_6wnfa")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditA" type="LineEdit" parent="Control"]
+modulate = Color(0.996078, 0.560784, 0, 1)
+self_modulate = Color(1, 0.639216, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.525
+anchor_right = 0.152
+offset_left = 94.0
+offset_top = -166.0
+offset_right = 93.9825
+offset_bottom = -135.0
+editable = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="resultadoA" type="Label" parent="Control/LineEditA"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -7.0
+offset_right = -16.0
+offset_bottom = 35.0
+text = "A"
+label_settings = SubResource("LabelSettings_u8bab")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditB" type="LineEdit" parent="Control"]
+modulate = Color(1, 0.839216, 0.168627, 1)
+self_modulate = Color(1, 0.87451, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.525
+anchor_right = 0.152
+offset_left = 95.0
+offset_top = -35.0
+offset_right = 94.9825
+offset_bottom = -4.0
+editable = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="resultadoB" type="Label" parent="Control/LineEditB"]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -7.0
+offset_right = -16.0
+offset_bottom = 35.0
+text = "B"
+label_settings = SubResource("LabelSettings_u8bab")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditC" type="LineEdit" parent="Control"]
+modulate = Color(0, 0.792157, 0.168627, 1)
+self_modulate = Color(0.372549, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.525
+anchor_right = 0.152
+offset_left = 114.0
+offset_top = 19.0
+offset_right = 113.982
+offset_bottom = 50.0
+alignment = 1
+editable = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="resultadoC" type="Label" parent="Control/LineEditC"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 29.0
+offset_right = 42.0
+offset_bottom = 71.0
+text = "C"
+label_settings = SubResource("LabelSettings_u8bab")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LineEditD" type="LineEdit" parent="Control"]
+modulate = Color(1, 0, 0.168627, 1)
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.875
+anchor_top = 1.0
+anchor_right = 6.552
+anchor_bottom = 3.1
+offset_left = 3.0
+offset_top = -24.0
+offset_right = 2.98248
+offset_bottom = -77.0
+alignment = 1
+editable = false
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="resultadoD" type="Label" parent="Control/LineEditD"]
+modulate = Color(0.858134, 0.90598, 1, 1)
+self_modulate = Color(1, 0, 1, 1)
+layout_mode = 0
+offset_left = 22.0
+offset_top = 32.0
+offset_right = 44.0
+offset_bottom = 74.0
+text = "D"
+label_settings = SubResource("LabelSettings_u8bab")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = -137.0
+offset_top = -525.0
+offset_right = 127.0
+offset_bottom = -261.0
+scale = Vector2(0.275, 0.275)
+icon = ExtResource("7_micrw")
+flat = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(60.295, 0)
+zoom = Vector2(0.28, 0.28)
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/ButtonLimpar" to="." method="_on_button_limpar_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]

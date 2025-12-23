@@ -1,0 +1,9 @@
+# Godot-specific ignores
+.godot/
+/android/
+/build/
+*.tmp
+
+# Editor-specific ignores
+.import/
+export_presets.cfg

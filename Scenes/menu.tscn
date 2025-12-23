@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=3 uid="uid://bw7uvd0uhfk7b"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_su5sq"]
+[ext_resource type="Texture2D" uid="uid://cxche0nijbm4b" path="res://images/Captura de tela 2024-07-14 110239.png" id="1_wnrqf"]
+[ext_resource type="Texture2D" uid="uid://b7xj6ika3b1et" path="res://images/Design sem nome (21).png" id="2_h5xmb"]
+[ext_resource type="Script" path="res://Scenes/effect.gd" id="3_arfox"]
+[ext_resource type="Shader" path="res://Scenes/menu.gdshader" id="3_ibi6l"]
+[ext_resource type="Script" path="res://Scenes/effects2.gd" id="4_yquic"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8e0e"]
+shader = ExtResource("3_ibi6l")
+shader_parameter/glow_intensity = 0.042
+
+[sub_resource type="Animation" id="Animation_2yo3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("effects:material:shader_parameter/glow_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.042]
+}
+
+[sub_resource type="Animation" id="Animation_i33n0"]
+resource_name = "glow"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("effects:material:shader_parameter/glow_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.5, 0.042]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_olbd4"]
+_data = {
+"RESET": SubResource("Animation_2yo3d"),
+"glow": SubResource("Animation_i33n0")
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_su5sq")
+
+[node name="CapturaDeTela2024-07-14110239" type="Sprite2D" parent="."]
+position = Vector2(611, 304)
+scale = Vector2(0.493386, 0.79)
+texture = ExtResource("1_wnrqf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(642, 296)
+offset = Vector2(-31.365, 13.01)
+zoom = Vector2(0.475, 0.475)
+
+[node name="effects" type="Sprite2D" parent="."]
+top_level = true
+material = SubResource("ShaderMaterial_b8e0e")
+position = Vector2(630.5, 257.5)
+scale = Vector2(0.987676, 1.26923)
+texture = ExtResource("2_h5xmb")
+script = ExtResource("3_arfox")
+
+[node name="TextureRect" type="TextureRect" parent="effects"]
+offset_left = -333.0
+offset_top = -212.0
+offset_right = 259.0
+offset_bottom = 351.0
+
+[node name="effects2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.184314, 1, 0.215686, 0.188235)
+top_level = true
+position = Vector2(641, 297)
+scale = Vector2(0.945, 0.945)
+texture = ExtResource("2_h5xmb")
+script = ExtResource("4_yquic")
+
+[node name="Control" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 441.0
+offset_top = 3.0
+offset_right = 780.0
+offset_bottom = 612.0
+
+[node name="Buttonoption1" type="Button" parent="Control"]
+texture_filter = 3
+layout_mode = 0
+offset_left = 29.84
+offset_top = 267.43
+offset_right = 163.84
+offset_bottom = 311.43
+text = "Perspectiva 
+Isométrica"
+
+[node name="Buttonoption2" type="Button" parent="Control"]
+texture_filter = 3
+layout_mode = 0
+offset_left = 176.84
+offset_top = 267.43
+offset_right = 310.84
+offset_bottom = 311.43
+text = "Vistas 
+Essenciais"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_olbd4")
+}
+
+[connection signal="pressed" from="Control/Buttonoption1" to="." method="_on_buttonoption_1_pressed"]
+[connection signal="pressed" from="Control/Buttonoption2" to="." method="_on_buttonoption_2_pressed"]
